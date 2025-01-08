@@ -6,7 +6,7 @@ function calculator(percent) {
 
     const bill=parseFloat(document.getElementById("userinput").value)
     
-    // const percent=document.getElementsByClassName(".btn-p").value=p
+    
     
     const percentage=bill*percent
     totalpercentage=percentage
