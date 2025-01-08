@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #c5e4e7;
+  font-family: monospace;
+}
+.main {
+  justify-content: center;
+  max-width: 100%;
+  border-radius: 12px;
+  background: white;
+  padding-inline: 20px;
+  padding-block: 20px;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+h1 {
+  text-align: center;
+  color: #53787a;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+h2 {
+  color: gray;
+  font-size: 16px;
+}
+.cart-box {
+  padding-inline: 20px;
+  border-radius: 12px;
+  padding-block: 20px;
+}
+h3 {
+  color: white;
+  font-size: 14px;
+}
+h3 span {
+  color: #53787a;
+  font-size: 12px;
+}
+p {
+  font-size: 40px;
+  color: #9fe8df;
+}
+.btn-p {
+  padding-inline: 20px;
+  padding-block: 5px;
+  background-color: #00474b;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn-p:hover {
+  background-color: #9fe8df;
+  color: #00474b;
+}
+.btn-i {
+  padding-inline: 20px;
+  padding-block: 5px;
+  width: 10%;
+  background-color: #f3f8fb;
+  border: 2px solid transparent;
+}
+.btn-i:hover {
+  border-color: #9fe8df;
+}
+.btn-i::placeholder {
+  font-size: 8px;
+  color: black;
+  font-weight: 600;
+}
+.btn-in {
+  width: 70%;
+  background-color: #f3f8fb;
+  border: 2px solid transparent;
+  padding: 5px;
+}
+.btn-in:hover {
+  border-color: #9fe8df;
+}
+.m1 {
+}
+.m-main {
+}
+@media screen and (max-width: 590px) {
+  body {
+    margin: auto;
+    display: block;
+  }
+
+  .main {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  .m1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .m-main {
+    display: flex;
+    height: 100%;
+  }
+}
