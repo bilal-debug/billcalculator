@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="Billing.css">
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <div class="m1">
-<div>
-        <h1 >SPLI<br> TIER</h1>
+<div style="grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr; padding-inline: 5px;">
+  <div >
+        <h1 >SPLI<br> TIER</h1></div>
+        <div>
+
+        <label style="display: flex; flex-direction: row;" for="Currency">Choose your Currency:</label>
+<select  onchange="currency()"  name="Currency" id="dropdown-menu">
+  <option value="EUR" id="EUR"  >EUR</option>
+  <option value="GBP">POUND</option>
+  <option value="USD" id="USD">USD</option>
+  
+</select>
+</div>
     </div>
     <div class="m-main">
     <div class="main" >
@@ -18,26 +30,27 @@
      
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <h2>Bill</h2>
-        <input class="btn-in" id="userinput"  type="number" value="" />
+        <input oninput="userinput()" class="btn-in" id="userinput"  type="number" value="" />
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <h2>Select Tip %</h2>
         <div >
           <div  >
-            <button class="btn-p" onclick="calculator(0.05)">5%</button>
-            <button class="btn-p" onclick="calculator(0.1)">10%</button>
-            <button class="btn-p" onclick="calculator(0.15)">15%</button>
+            <button class="btn-p" onclick="handleTipForFive()">5%</button>
+            <button class="btn-p" onclick="handleTipForTen()">10%</button>
+            <button class="btn-p" onclick="handleTipForFifteen()">15%</button>
           </div>
           <div style="margin-top: 20px;">
-            <button class="btn-p"onclick="calculator(0.25)">25%</button>
-            <button class="btn-p" onclick="calculator(0.5)">50%</button>
-            <input class="btn-i" id="custom" oninput="custom()" type="text" value="" placeholder="CUSTOM" />
+            <button class="btn-p"onclick="handleTipForTwentyFive()">25%</button>
+            <button class="btn-p" onclick="handleTipForFifty()">50%</button>
+            <input class="btn-i" id="custom" oninput="handleTipForCustom()" type="text" value="" placeholder="CUSTOM" />
           </div>
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <h2>Number of People</h2>
-        <input class="btn-in" id="np" oninput="total()"  type="number" value=""  />
+        <p id="nperror"></p>
+        <input class="btn-in" id="np" oninput="totalNoP()"  type="number" value=""  />
       </div>
     </div>
     <div class="cart-box" style="background-color: #00474b; display: flex; flex-direction: column; justify-content: space-between; gap: 120px;">
@@ -47,7 +60,7 @@
           <h3>Tip Amount<br> <span>/ Person</span></h3>
         </div>
         <div>
-          <p id="tipamount">$0.00</p>
+          <p id="tipamount"></p>
         </div>
       </div>
 
@@ -56,7 +69,7 @@
         <h3>Total <br><span>/ Person</span></h3>
       </div>
       <div>
-        <p id="totalbill">$0.00</p>
+        <p id="totalbill"></p>
       </div>
 
     </div>
@@ -74,5 +87,5 @@
 </div>
 </div>
   </body>
-  <script src="Billing.js"></script>
+  <script src="index.js"></script>
 </html>
