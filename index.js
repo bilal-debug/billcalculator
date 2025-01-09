@@ -10,10 +10,11 @@ function setVariables() {
   const totalamount = (Number(bill) + Number(appliedTip)) / Number(nop);
   document.getElementById("userinput").value = bill;
   document.getElementById("np").value = nop;
-  document.getElementById("tipamount").innerText = "$" + appliedTip.toFixed(2);
+  document.getElementById("tipamount").innerText =
+    "$" + (appliedTip * userCurrencyExchange).toFixed(2);
   if (nop > 0) {
     document.getElementById("totalbill").innerText =
-      "$" + totalamount * userCurrencyExchange.toFixed(2);
+      "$" + (totalamount * userCurrencyExchange).toFixed(2);
   }
 
   document.getElementById("dropdown-menu").value = exchangeRates;
